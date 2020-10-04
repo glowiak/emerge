@@ -1,0 +1,38 @@
+#!/usr/bin/env bash
+# Emerge for FreeBSD wroten by glowiaK
+if [[ "$1" == "" ]]; then
+    echo "Usage: emerge <option> <package>"
+    echo "or emerge <package>"
+    echo "Options:"
+    echo "--sync       Update package list"
+    echo "--search     Search for a package"
+    echo "--unmerge    Remove a package"
+    exit
+fi
+if [[ "$1" == "--sync" ]]; then
+    echo "===>Syncing Portstage tree."
+    portsnap fetch
+    echo "===>Unarchiving Portstage free."
+    portsnap extract
+    echo "===>Portstage tree is up-to-date."
+    exit
+fi
+if [[ "$1" == "--search" ]]; then
+    echo "===>Preparing search for $2"
+    ls /usr/ports/* | grep $2
+    echo "===>Task completed."
+    exit
+fi
+if [[ "$1" == "--unmerge" ]]; then
+    echo "===>Unmerging $2"
+    pkg remove $2
+    echo "===>Process completed."
+    exit
+fi
+echo "===>Preparing to install $1."
+curdir=$(pwd)
+cd /usr/ports/$1
+make install clean
+cd $curdir
+echo "===>Process completed."
+exit
