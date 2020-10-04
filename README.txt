@@ -20,5 +20,7 @@ Exec this commands as root with installed dependiences:
 # chmod +x emerge
 Or if You don't have wget:
 # cd /usr/local/bin
-# fetch http://github.com/glowiak/emerge/raw/master/emerge
+# fetch --no-verify-peer http://github.com/glowiak/emerge/raw/master/emerge
 # chmod +x emerge
+
+!NOTE!: You must type 'emerge --sync' as root before using it!
