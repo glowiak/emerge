@@ -9,4 +9,16 @@ Options:
 --unmerge <package>       Remove a package
 --search <package>        Search for a package
 
+Dependiences:
+-wget
+-bash
+
 Installing:
+Exec this commands as root with installed dependiences:
+# cd /usr/local/bin
+# wget --no-check-certificate http://github.com/glowiak/emerge/raw/master/emerge
+# chmod +x emerge
+Or if You don't have wget:
+# cd /usr/local/bin
+# fetch http://github.com/glowiak/emerge/raw/master/emerge
+# chmod +x emerge
