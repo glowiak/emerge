@@ -19,7 +19,7 @@ if [[ "$1" == "--sync" ]]; then
 fi
 if [[ "$1" == "--search" ]]; then
     echo "===>Preparing search for $2"
-    ls /usr/ports/* | grep $2
+    ls /usr/ports | grep $2
     echo "===>Task completed."
     exit
 fi
