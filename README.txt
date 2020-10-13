@@ -10,17 +10,24 @@ Options:
 --search <package>        Search for a package
 
 Dependiences:
--wget
 -bash
 
-Installing:
+Installing on FreeBSD:
 Exec this commands as root with installed dependiences:
-# cd /usr/local/bin
-# wget --no-check-certificate http://github.com/glowiak/emerge/raw/master/emerge
-# chmod +x emerge
-Or if You don't have wget:
 # cd /usr/local/bin
 # fetch --no-verify-peer http://github.com/glowiak/emerge/raw/master/emerge
 # chmod +x emerge
 
 !NOTE!: You must type 'emerge --sync' as root before using it!
+
+How to install depenciences:
+FreeBSD: # pkg install bash
+NetBSD: # pkgin install bash
+OpenBSD: # pkg_add bash
+
+Current version:
+FreeBSD: 0.4
+NetBSD: planned
+OpenBSD: planned
+
+I'm gonna make emerge for NetBSD and OpenBSD. Good idea?
